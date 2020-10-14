@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mNutrition - Gerenciador de dietas</title>
+
+    <link rel="stylesheet" href="/styles/diet.css">
+
+</head>
+<body>
+    <div class="all-content">
+        <header>
+            <a href="/"><img src="/assets/images/logo2.png" alt="mNutrition logo"></a>           
+        </header>
+        
+        <h1>Gerenciador de dieta</h1>
+        
+        <section class="diet-content">
+
+            <h2>Café da manhã</h2>
+
+            <div class="foods">
+
+                <table class="food-info">
+                    <tr>
+                        <th>Alimentos</th>
+                        <th>Quantidade</th>
+                        <th>Carboidratos</th>
+                        <th>Proteínas</th>
+                        <th>Gorduras</th>
+                    </tr>
+                    
+                    
+                </table>
+
+            <div class="modal active">
+                <div class="modal-card">
+                    <div class="modal-content">
+
+                        <h1>Selecione os alimentos</h1>
+
+                        <div class="foods-section">
+
+                            <select name="food-select" id="food-select">
+                                <option value="0">- Selecione um alimento -</option>
+                                    {% for food in data %}
+                                        <option value="{{food.id}}">{{food.description}}</option>
+                                    {% endfor %}
+                            </select>
+                        </div>
+                        
+                        
+                        <table class="selected-food">
+
+                            <tr>
+                                <th>Alimentos</th>
+                                <th>Digite a quantidade <span class="grama">(g)</span></th>
+                                <th>Carboidratos</th>
+                                <th>Proteínas</th>
+                                <th>Gorduras</th>
+                            </tr>
+                            
+                            <tfoot>
+                                <tr class="macroTotal">
+                                    <th>Total</th>
+                                    <td> - </td>
+                                    <td class="carboTotal"> - </td>
+                                    <td class="proteinTotal"> - </td>
+                                    <td class="fatTotal"> - </td>
+                                </tr>
+                            </tfoot>
+
+                        </table>
+
+                        <button class="record-button">Gravar</button>
+
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </section>
+       
+        
+    </div>
+
+   
+</body>
+
+    <script src="scripts/script.js"></script>
+
+</html>
